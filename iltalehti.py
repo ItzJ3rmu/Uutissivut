@@ -1,6 +1,7 @@
 import requests
 
 from bs4 import BeautifulSoup
+import bs4
 
 def nouda( url , out ):
 
@@ -10,8 +11,10 @@ def nouda( url , out ):
 
 	teksti = soup.find_all( 'isense' )
 
-	for string in teksti[0].stripped_strings:
-	        out.write(repr(string))
+	for e in teksti[0]:
+		if isinstance( e, bs4.element.Tag):
+			if not e.get('class'):
+				out.write( repr( e.string ) )
 
 if __name__ == '__main__':
 	
