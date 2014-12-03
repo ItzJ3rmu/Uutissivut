@@ -8,11 +8,11 @@ def nouda( url , out ):
 	r.encoding = 'UTF-8'
 	soup = BeautifulSoup( r.text )
 
-	teksti = soup.find_all( id="article-text" )
+	teksti = soup.find_all( class_ ='Teksti' )
 
 	for string in teksti[0].stripped_strings:
 	        out.write(repr(string))
 
 if __name__ == '__main__':
 	
-	nouda("http://www.iltasanomat.fi/ulkomaat/art-1288789081654.html", file('iltasa.txt', 'w'))
+	nouda("http://www.lapinkansa.fi/Lappi/1194944697007/artikkeli/kaunis+tykky+voi+olla+kavala+puille.html", file('lapinkansa.txt', 'w'))

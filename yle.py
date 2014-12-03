@@ -2,16 +2,17 @@ import requests
 
 from bs4 import BeautifulSoup
 
-r = requests.get("http://yle.fi/uutiset/nordea_synkkyys_jatkuu/7663512")
-r.encoiding = 'UTF-8'
-soup = BeautifulSoup( r.text )
+def nouda( url , out ):
 
-teksti = soup.find_all( class_='text' )
+	r = requests.get( url )
+	r.encoding = 'UTF-8'
+	soup = BeautifulSoup( r.text )
 
-for i in teksti:
-    print i
+	teksti = soup.find_all( class_='text' )
 
-i.contents[0]
+	for string in teksti[0].stripped_strings:
+	        out.write(repr(string))
 
-for string in i.stripped_strings:
-        print(repr(string))
+if __name__ == '__main__':
+
+	nouda("http://yle.fi/uutiset/nordea_synkkyys_jatkuu/7663512", file('yle.txt', 'w'))
