@@ -1,17 +1,19 @@
 import requests
 
 from bs4 import BeautifulSoup
+import bs4
 
-r = requests.get("http://www.hs.fi/ulkomaat/a1417488621135")
-r.encoiding = 'UTF-8'
-soup = BeautifulSoup( r.text )
+def nouda( url , out ):
 
-teksti = soup.find_all( id="article-text" )
+	r = requests.get( url )
+	r.encoding = 'UTF-8'
+	soup = BeautifulSoup( r.text )
 
-for i in teksti:
-    print i
+	teksti = soup.find_all( id="article-text-content" )
+	for e in teksti[0]:
+		if isinstance( e, bs4.element.Tag):
+			out.write(repr(e))
 
-i.contents[0]
-
-for string in i.stripped_strings:
-        print(repr(string))
+if __name__ == '__main__':
+	
+	nouda("http://www.hs.fi/ulkomaat/a1417488621135", file('hs.txt', 'w'))
