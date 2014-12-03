@@ -13,7 +13,7 @@ def nouda( url , out ):
 
 	for e in teksti[0]:
 		if isinstance( e, bs4.element.Tag):
-			if not e.get('class'):
+			if not e.get('id') and e.string and not e.get('type'): ## hack, fixme
 				out.write( repr( e.string ) )
 
 if __name__ == '__main__':
