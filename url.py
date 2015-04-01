@@ -1,7 +1,7 @@
 import requests
 
 import yle
-import aamulehti
+#import aamulehti
 import ess
 import hbl
 import ilkka
@@ -15,6 +15,7 @@ import maaseudun_tulevaisuus
 import satakunnan_kansa
 import savon_sanomat
 import hs
+import ampparit
 
 
 from bs4 import BeautifulSoup
@@ -83,6 +84,10 @@ elif b == "satakunnankansa":
 
 elif b == "savonsanomat":
 	savon_sanomat.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "ampparit":
+	ampparit.nouda(add, file(txt, 'w'))
 	print(b + ":\n" + "Kirjoitus onnistui")
 
 else: 
