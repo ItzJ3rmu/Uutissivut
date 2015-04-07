@@ -8,7 +8,7 @@ def nouda( url , out ):
 	r.encoding = 'UTF-8'
 	soup = BeautifulSoup( r.text )
 
-	for teksti in soup.find_all( class_='grid__item two-thirds article__body--container' ):
+	for teksti in soup.find_all( class_='storyText' ):
 		for p in teksti.find_all( 'p' ):
 
 			for string in p.stripped_strings:
@@ -16,5 +16,5 @@ def nouda( url , out ):
 
 if __name__ == '__main__':
 
-	nouda("http://www.kauppalehti.fi/uutiset/putin-nayttaytyi-julkisuudessa-ilman-juoruja-olisi-tylsaa/pBBPEhQ2?ext=ampparit", file('kauppalehti.txt', 'w'))
+	nouda("http://www.taloussanomat.fi/politiikka/2015/03/16/kreikka-lyhennamme-velkaamme-sovitusti-imflle/20153273/12", file('taloussanomat.txt', 'w'))
 

@@ -15,7 +15,27 @@ import maaseudun_tulevaisuus
 import satakunnan_kansa
 import savon_sanomat
 import hs
-import ampparit
+import suomenmaa
+import verkkouutiset
+import demokraatti
+import kansanuutiset
+import aamuset
+#import suomenuutiset
+import kdlehti
+import seura
+#import blogit
+import kokemaenjokilaakso
+import uusisuomi
+import taloussanomat
+import vihrealanka
+#import kauppalehti
+#import mahorkka
+import suomenkuvalehti
+import hyvaterveys
+import ts
+import faktabaari
+import tiedonantaja
+import helsinginuutiset
 
 
 from bs4 import BeautifulSoup
@@ -86,8 +106,88 @@ elif b == "savonsanomat":
 	savon_sanomat.nouda(add, file(txt, 'w'))
 	print(b + ":\n" + "Kirjoitus onnistui")
 
-elif b == "ampparit":
-	ampparit.nouda(add, file(txt, 'w'))
+elif b == "suomenmaa":
+	suomenmaa.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "verkkouutiset":
+	verkkouutiset.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "demokraatti":
+	demokraatti.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "kansanuutiset":
+	kansanuutiset.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "aamuset":
+	aamuset.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+#elif b == "suomenuutiset":
+	#suomenuutiset.nouda(add, file(txt, 'w'))
+	#print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "kdlehti":
+	kdlehti.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "seura":
+	seura.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+#elif b =="blogit":
+	#blogit.nouda(add, file(txt, 'w'))
+	#print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "kokemaenjokilaakso":
+	kokemaenjokilaakso.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "uusisuomi":
+	uusisuomi.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "taloussanomat":
+	taloussanomat.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "vihrealanka":
+	vihrealanka.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+#elif b == "kauppalehti":
+	#kauppalehti.nouda(add, file(txt, 'w'))
+	#print(b + ":\n" + "Kirjoitus onnistui")
+
+#elif b == "mahorkka":
+	#mahorkka.nouda(add, file(txt, 'w'))
+	#print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "suomenkuvalehti":
+	suomenkuvalehti.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "hyvaterveys":
+	hyvaterveys.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "ts":
+	ts.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "faktabaari":
+	faktabaari.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "tiedonantaja":
+	tiedonantaja.nouda(add, file(txt, 'w'))
+	print(b + ":\n" + "Kirjoitus onnistui")
+
+elif b == "helsinginuutiset":
+	helsinginuutiset.nouda(add, file(txt, 'w'))
 	print(b + ":\n" + "Kirjoitus onnistui")
 
 else: 
